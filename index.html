@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SEATLOCK – Advanced Theater Booking Simulator</title>
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <h1>SEATLOCK</h1>
+  <p class="subtitle">Interactive Theater Ticket Booking Simulator</p>
+
+  <div class="controls">
+    <label>Booking Mode:</label>
+    <select id="mode">
+      <option value="bug"> No Control (Bug)</option>
+      <option value="lock"> Mutex Lock</option>
+      <option value="queue"> Queue-Based (Safe)</option>
+    </select>
+  </div>
+
+  <div class="seat-map-container">
+    <h2>Seat Map</h2>
+    <div id="seat-map" class="seat-map"></div>
+  </div>
+
+  <div class="users">
+    <button onclick="book('User A')">User A Book</button>
+    <button onclick="book('User B')">User B Book</button>
+    <button onclick="book('User C')">User C Book</button>
+    <button onclick="book('User D')">User D Book</button>
+    <button onclick="book('User E')">User E Book</button>
+  </div>
+
+  <h3>📜 Event Log</h3>
+  <div id="log" class="log"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+

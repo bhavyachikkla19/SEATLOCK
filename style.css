@@ -1,0 +1,156 @@
+/* Font */
+body {
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #e0f7fa, #e1bee7);
+  padding: 20px;
+  text-align: center;
+  min-height: 100vh;
+}
+
+h1 {
+  color: #4a148c;
+  font-weight: 700;
+  font-size: 2.5rem;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+  margin-bottom: 0;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #6a1b9a;
+  margin-bottom: 25px;
+}
+
+/* Controls */
+.controls {
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #4a148c;
+}
+
+select {
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid #8e24aa;
+  outline: none;
+  font-weight: bold;
+}
+
+/* Seat Map Container */
+.seat-map-container {
+  margin: 20px auto;
+  width: 400px;
+  padding: 20px;
+  background: rgba(255,255,255,0.85);
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* Seat Map Grid */
+.seat-map {
+  display: grid;
+  grid-template-columns: repeat(5, 60px);
+  grid-gap: 12px;
+  justify-content: center;
+}
+
+/* Seats */
+.seat {
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  line-height: 60px;
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+  color: white;
+  font-size: 0.9rem;
+  position: relative;
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+}
+
+/* Available */
+.seat.available {
+  background: linear-gradient(145deg, #26a69a, #00796b);
+}
+
+/* VIP */
+.seat.vip {
+  background: linear-gradient(145deg, #8e24aa, #d81b60);
+  box-shadow: 0 0 10px #d81b60;
+}
+
+/* Booked */
+.seat.booked {
+  background: linear-gradient(145deg, #e53935, #b71c1c);
+  cursor: not-allowed;
+}
+
+/* In Queue */
+.seat.in-queue {
+  background: linear-gradient(145deg, #fbc02d, #f57f17);
+  animation: pulse 1s infinite;
+}
+
+/* Hover */
+.seat:hover {
+  transform: scale(1.3) rotate(-4deg);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+/* Tooltip */
+.seat:hover::after {
+  content: attr(data-info);
+  position: absolute;
+  bottom: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.8);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+/* Buttons */
+.users button {
+  margin: 5px;
+  padding: 12px 22px;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #6a1b9a, #ab47bc);
+  color: white;
+  font-weight: bold;
+  font-size: 0.95rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.users button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+}
+
+/* Event Log */
+.log {
+  background: rgba(0,0,0,0.85);
+  color: #0f0;
+  height: 220px;
+  overflow-y: auto;
+  padding: 15px;
+  font-family: monospace;
+  text-align: left;
+  margin-top: 20px;
+  border-radius: 12px;
+}
